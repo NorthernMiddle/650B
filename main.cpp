@@ -43,6 +43,7 @@ int autonSpinnerSpeedPCT = 40;
 //int driverArmSpeedPCT = 50;
 //int driverPuncherMotorSpeedPCT = 100;
 int driverSpinnerSpeedPCT = 40;
+int DriverMotorSpeedPCT = 75;
 
 /*---------------------------------------------------------------------------*/
 /*                                                                           */
@@ -74,6 +75,15 @@ void clearEncoders_func(){
       ARMmotor.stop(vex::brakeType::brake);
     }
 }*/
+
+void driveSetMotorVelocity_func(){
+    //Set the velocity of the left and right motors to 55% power. 
+    //This command will not make the motor spin.
+    FLmotor.setVelocity(DriverMotorSpeedPCT, velocityUnits::pct);
+    BLmotor.setVelocity(DriverMotorSpeedPCT, velocityUnits::pct);
+    FRmotor.setVelocity(DriverMotorSpeedPCT, velocityUnits::pct);
+    BRmotor.setVelocity(, velocityUnits::pct);
+    }
 
 void drive_func(){
     //Drive Controls
